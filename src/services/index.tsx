@@ -1,8 +1,7 @@
-import axios from "axios";
+import { DogBreed } from "../interfaces";
+import axios from "../utils/axiosConfig";
 
-axios.defaults.baseURL = `${process?.env?.baseAPIURL}${process.env.basePath}`;
-
-export const getDogBreeds = async (eventid: string): Promise<{ data: any }> => {
-    const { data: filters } = await axios.get(`/filtercategory/getall/${eventid}`);
-    return filters;
+export const getDogBreeds = async (): Promise<DogBreed[]> => {
+    const { data: breeds } = await axios.get(`/breeds`);
+    return breeds
 };
