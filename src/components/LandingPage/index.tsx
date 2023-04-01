@@ -13,7 +13,7 @@ const Container = styled.div`
     }
 `
 
-const ChildContainer = styled.div<{ background?: string }>`
+const ContentContainer = styled.div<{ background?: string }>`
     flex: 1;
     ${props => props.background && `background: ${props.background};`};
     min-height: 100vh;
@@ -22,25 +22,31 @@ const ChildContainer = styled.div<{ background?: string }>`
 const LandingPage: React.FC = () => {
     const [breeds, setBreeds] = useState<CarouselItem[]>([])
 
-    useEffect(() => {
-        const fetchData = async () => {
+    const fetchBreedsData = async () => {
+        try {
             const _breeds = await Promise.all(BreedsList.map(async (breed) => {
                 const breedDetails = await getDogBreedByName(breed.name)
-                return { ...breed, description: breedDetails[0]?.temperament }
+                return { ...breed, description: breedDetails?.temperament }
             }))
 
-            // timeout is used to show the loading animation but not necessary
+            // timeout is not necessary but used to highlight the loading animation
             setTimeout(() => setBreeds(_breeds), 3000)
+
+        } catch (err) {
+            console.error(err)
         }
-        fetchData()
+    }
+
+    useEffect(() => {
+        fetchBreedsData()
     }, [])
 
     return (
         <Container>
-            <ChildContainer />
-            <ChildContainer background='white'>
+            <ContentContainer />
+            <ContentContainer background='white'>
                 <Carousel items={breeds} />
-            </ChildContainer>
+            </ContentContainer>
         </Container>
     )
 }
