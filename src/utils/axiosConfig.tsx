@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-// TODO: move base url and key to .env file
 const instance = axios.create({
-  baseURL: 'https://api.thedogapi.com/v1',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   headers: {
-    'x-api-key': '317c6d89-8467-4c2f-aac6-1d06bb975409',
+    'x-api-key': process.env.REACT_APP_API_KEY,
     common: {
       'Content-Type': 'application/json',
     },
