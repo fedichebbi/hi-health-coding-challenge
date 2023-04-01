@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { CarouselItem } from "../../../interfaces";
 import Stepper from "./Stepper";
 import Typography from "./Typography";
@@ -12,28 +12,40 @@ const Container = styled.div`
   height:100vh;
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 // as assets do not have the same proportions, a container will ensure they are displayed equally
 const ImageContainer = styled(Container)`
   height:auto;
   max-width: 150px;
   overflow: hidden;
-`;
-
-const Image = styled.img`
   height: 300px;
 `;
 
+const Image = styled.img`
+  height: 100%;
+  animation: ${fadeIn} 0.5s ease-in-out;
+`;
+
 interface CarouselProps {
-  items: CarouselItem[]
+  items: CarouselItem[];
 }
 const Carousel: React.FC<CarouselProps> = (props) => {
   const { items } = props
-  const [isLoading, setIsLoading] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
 
   function handleClick() {
-    const nextStep = (currentStep + 1) % 4
-    setCurrentStep(nextStep)
+    // use % to ensure the step gets back to 0 when it reaches steps length
+    // eg: 3 % 4 = 3 but 4 % 4 = 0
+    const nextStep = (currentStep + 1) % items.length
+    setTimeout(() => setCurrentStep(nextStep), 200)
   }
 
   const currentItem = items[currentStep]
@@ -41,10 +53,10 @@ const Carousel: React.FC<CarouselProps> = (props) => {
   return (
     <Container onClick={handleClick}>
       <ImageContainer >
-        <Image src={currentItem?.image} />
+        {currentItem?.image && <Image src={currentItem.image} />}
       </ImageContainer>
-      <Stepper currentStep={currentStep} onChange={setCurrentStep} />
-      <Typography fontSize="24px" lineHeight="32px" letterSpacing="1.5px" marginBottom="20px" >{currentItem?.name}</Typography>
+      <Stepper isLoading={!currentItem} stepsLength={items.length || 4} currentStep={currentStep} onChange={setCurrentStep} />
+      <Typography fontSize="24px" lineHeight="32px" letterSpacing="1.5px" marginBottom="20px" height="32px">{currentItem?.name}</Typography>
       <Typography fontSize="16px" lineHeight="20px" letterSpacing="0.35px" height="100px">{currentItem?.description}</Typography>
     </Container>
   )

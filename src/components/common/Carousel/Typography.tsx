@@ -5,7 +5,7 @@ interface TypographyProps {
   lineHeight: string;
   letterSpacing: string;
   marginBottom?: string;
-  height?:string;
+  height?: string;
 }
 
 const Typography = styled.span<TypographyProps>`

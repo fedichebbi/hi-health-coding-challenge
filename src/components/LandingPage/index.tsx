@@ -7,7 +7,7 @@ import BreedsList from './BreedsList'
 
 const Container = styled.div`
     display: flex;
-    background: lightgrey;
+    background: #F7F8FA;
     @media (max-width: 768px) {
         flex-direction: column-reverse
     }
@@ -20,7 +20,6 @@ const ChildContainer = styled.div<{ background?: string }>`
 `
 
 const LandingPage: React.FC = () => {
-
     const [breeds, setBreeds] = useState<CarouselItem[]>([])
 
     useEffect(() => {
@@ -29,7 +28,9 @@ const LandingPage: React.FC = () => {
                 const breedDetails = await getDogBreedByName(breed.name)
                 return { ...breed, description: breedDetails[0]?.temperament }
             }))
-            setBreeds(_breeds)
+
+            // timeout is used to show the loading animation but not necessary
+            setTimeout(() => setBreeds(_breeds), 3000)
         }
         fetchData()
     }, [])
