@@ -1,6 +1,55 @@
-# Getting Started with Create React App
+# Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front-end code challenge v2.0
+
+## Description
+
+This is a simple React TypeScript project I built as part of a coding challenge. It allows users to view a landing page slider about dogs.
+
+## Demo
+
+Check out the live demo [here](https://fedichebbi.github.io/hi-health-coding-challenge).
+
+## Technologies Used
+
+* React
+* TypeScript
+* styled-components
+* Axios
+
+## Installation
+
+To install the project, simply run:
+
+<pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs">npm install
+</code></div></div></pre>
+
+## Usage
+
+To start the development server, run:
+
+```
+npm start
+```
+
+This will launch the app in your browser at `http://localhost:3000`.
+
+To build the project for production, run:
+
+```
+npm run build
+```
+
+This will create a production-ready build of the app in the `build` directory.
+
+## Credits
+
+This project uses the following third-party libraries:
+
+* React: [https://reactjs.org/](https://reactjs.org/)
+* TypeScript: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+* styled-components: [https://styled-components.com/](https://styled-components.com/)
+* Axios: [https://github.com/axios/axios](https://github.com/axios/axios)
 
 ## Available Scripts
 
@@ -8,23 +57,18 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
