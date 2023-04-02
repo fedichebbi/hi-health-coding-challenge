@@ -57,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = (props) => {
       </ImageContainer>
       <Stepper isLoading={!currentItem} stepsLength={items.length || 4} currentStep={currentStep} onChange={setCurrentStep} />
       <Typography fontSize="24px" lineHeight="32px" letterSpacing="1.5px" marginBottom="20px" height="32px">{currentItem?.name}</Typography>
-      <Typography fontSize="16px" lineHeight="20px" letterSpacing="0.35px" height="100px">{currentItem?.description}</Typography>
+      <Typography fontSize="16px" lineHeight="20px" letterSpacing="0.35px" height="100px" width="60%">{currentItem?.description}</Typography>
     </Container>
   )
 }

@@ -6,6 +6,7 @@ interface TypographyProps {
   letterSpacing: string;
   marginBottom?: string;
   height?: string;
+  width?:string;
 }
 
 const Typography = styled.span<TypographyProps>`
@@ -18,7 +19,7 @@ const Typography = styled.span<TypographyProps>`
   letter-spacing: ${props => props.letterSpacing};
   margin-bottom: ${props => props.marginBottom ?? '0px'};
   height:${props => props.height ?? 'auto'};
-  width: 60%;
+  width:${props => props.width ?? '100%'};
 `;
 
 export default Typography;
