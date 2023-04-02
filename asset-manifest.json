@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/hi-health-coding-challenge/static/css/main.49e5c07c.css",
+    "main.js": "/hi-health-coding-challenge/static/js/main.1d486590.js",
+    "static/js/787.f820855a.chunk.js": "/hi-health-coding-challenge/static/js/787.f820855a.chunk.js",
+    "static/media/Nunito-VariableFont_wght.ttf": "/hi-health-coding-challenge/static/media/Nunito-VariableFont_wght.4a3eef3e0a61b7eb3eda.ttf",
+    "index.html": "/hi-health-coding-challenge/index.html",
+    "main.49e5c07c.css.map": "/hi-health-coding-challenge/static/css/main.49e5c07c.css.map",
+    "main.1d486590.js.map": "/hi-health-coding-challenge/static/js/main.1d486590.js.map",
+    "787.f820855a.chunk.js.map": "/hi-health-coding-challenge/static/js/787.f820855a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49e5c07c.css",
+    "static/js/main.1d486590.js"
+  ]
+}
